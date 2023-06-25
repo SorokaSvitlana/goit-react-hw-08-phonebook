@@ -3,11 +3,11 @@ import { useForm } from 'react-hook-form';
 import { FormAdd, Label, Input, Button } from './Form.Styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from 'nanoid';
-import { addContact} from 'components/redux/contacts/contactsOperation';
-import { getContacts } from 'components/redux/contacts/contactsSlice';
+import { addContact} from 'redux/contacts/contactsOperation';
+import { selectContacts } from 'redux/contacts/contactsSelector';
 
 export const Form = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const { register, handleSubmit, reset } = useForm();
 

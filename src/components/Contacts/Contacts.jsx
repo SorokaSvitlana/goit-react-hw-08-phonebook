@@ -1,14 +1,14 @@
 
 import { ContactsList, ContactItem } from './Contacts.Styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFilter } from 'components/redux/contacts/contactsFilterSlice';
-import { deleteContact } from 'components/redux/contacts/contactsOperation';
-import { getContacts } from 'components/redux/contacts/contactsSlice';
+import { deleteContact } from 'redux/contacts/contactsOperation';
+import { selectContacts, selectFilter } from 'redux/contacts/contactsSelector';
+import React from 'react';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
-  const contactsFilter = useSelector(getFilter);
+  const contacts = useSelector(selectContacts);
+  const contactsFilter = useSelector(selectFilter);
   console.log(contacts)
 
   const getFilteredContacts = () => {

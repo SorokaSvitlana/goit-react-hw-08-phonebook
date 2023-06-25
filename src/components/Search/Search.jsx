@@ -3,7 +3,7 @@ import {StyledSearchWrapper, StyledSearchLabel, StyledSearchInput} from './Searc
 import { Controller, useForm, useWatch } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
-import { filter } from 'components/redux/contacts/contactsFilterSlice';
+import { filter } from 'redux/contacts/contactsFilterSlice';
 export const Search = () => {
 
   const dispatch = useDispatch();
