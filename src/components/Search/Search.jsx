@@ -2,16 +2,17 @@ import PropTypes from 'prop-types'
 import {StyledSearchWrapper, StyledSearchLabel, StyledSearchInput} from './Search.Styled'
 import { Controller, useForm, useWatch } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-
 import { filter } from 'redux/contacts/contactsFilterSlice';
+
 export const Search = () => {
-
   const dispatch = useDispatch();
-    const handleFilterChange  = e => {
-      dispatch(filter(e.target.value));
-    };
-
   const {control} = useForm();
+  
+  const handleFilterChange  = e => {
+    dispatch(filter(e.target.value));
+  };
+
+
   const searchValue = useWatch({
     control,
     name: 'search',
