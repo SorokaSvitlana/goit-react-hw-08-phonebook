@@ -27,15 +27,15 @@ useEffect(() => {
               path="/"
               element={<Home />}/>
             <Route
-              path="login"
+              path="/login"
               element={<RestrictedRoute redirectTo="/contacts" component={<LoginPage/>} />}
             />
             <Route
-              path="register"
+              path="/register"
               element={<RestrictedRoute redirectTo="/contacts" component={<RegisterPage/>} />}
             />
             <Route
-            path="contacts"
+            path="/contacts"
             element={
               <PrivateRoute redirectTo="/login"  component={<ContactsPage />} />
             }
