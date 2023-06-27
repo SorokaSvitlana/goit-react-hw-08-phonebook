@@ -11,6 +11,7 @@ import RegisterPage from "Pages/Register";
 import ContactsPage from "Pages/Phonebook";
 import Home from "Pages/Home";
 import { selectIsRefreshing } from "redux/auth/selectors";
+import { PageNotFound } from "Pages/PageNotFound";
 
 export function App() {
   const dispatch = useDispatch();
@@ -43,6 +44,7 @@ useEffect(() => {
               <PrivateRoute redirectTo="/login"  component={<ContactsPage />} />
             }
           />
+          <Route path="*" element={<PageNotFound />} />
           </Routes>
     </Container>
   );
