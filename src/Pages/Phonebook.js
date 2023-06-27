@@ -4,8 +4,8 @@ import { Form } from "components/FormAddContacts/FormAddContacts";
 import { Search } from "components/Search/Search";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchContacts } from "redux/contacts/contactsOperation";
 import React from 'react';
+import { fetchContacts } from "redux/contacts/contactsOperation";
 
 export default function ContactsPage() {
     const dispatch = useDispatch();

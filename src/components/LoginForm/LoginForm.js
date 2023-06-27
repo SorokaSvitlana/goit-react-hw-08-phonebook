@@ -38,8 +38,6 @@ export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  
-
   const handleEmailChange = e => {
     setEmail(e.target.value);
   };
@@ -55,9 +53,6 @@ export default function LoginForm() {
     setPassword('');
     form.reset();
   };
-
-
-
   return (
   <>   
 
@@ -120,19 +115,4 @@ export default function LoginForm() {
 </> )
 }
 
-  //   <form onSubmit={handleSubmit} autoComplete="off">
-  //     <label>
-  //       Email
-  //       <input type="email" name="email" onChange={handleEmailChange} />
-  //     </label>
-  //     <label>
-  //       Password
-  //       <input
-  //         type="password"
-  //         name="password"
-  //         onChange={handlePasswordChange}
-  //       />
-  //     </label>
-  //     <button type="submit">Log In</button>
-  //   </form>
-  // );
+ 

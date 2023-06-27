@@ -12,7 +12,6 @@ export const Search = () => {
     dispatch(filter(e.target.value));
   };
 
-
   const searchValue = useWatch({
     control,
     name: 'search',

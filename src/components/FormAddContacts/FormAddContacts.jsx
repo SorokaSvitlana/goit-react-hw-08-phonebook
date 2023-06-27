@@ -33,8 +33,8 @@ export const Form = () => {
       name: name,
       number: number,
     };
-reset()
-    dispatch(addContact(contact));
+reset() 
+dispatch(addContact(contact));
   };
 
   return (

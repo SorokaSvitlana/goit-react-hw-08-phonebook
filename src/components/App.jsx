@@ -1,6 +1,6 @@
 import React, { useEffect }  from "react";
 import { Container } from './Container/Container.Styled'
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { PrivateRoute } from "./PrivateRoute";
 import { RestrictedRoute } from "./RestrictedRoute";
@@ -10,16 +10,19 @@ import LoginPage from "Pages/Login";
 import RegisterPage from "Pages/Register";
 import ContactsPage from "Pages/Phonebook";
 import Home from "Pages/Home";
+import { selectIsRefreshing } from "redux/auth/selectors";
 
 export function App() {
   const dispatch = useDispatch();
-  // const isUserRefreshing = useSelector(selectIsRefreshing);
+  const isUserRefreshing = useSelector(selectIsRefreshing);
 
 useEffect(() => {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return   (
+  return  isUserRefreshing ? (
+    <h2>Refreshing user...</h2>
+  ) :  (
     <Container>
       <AppBar />
       <Routes>
